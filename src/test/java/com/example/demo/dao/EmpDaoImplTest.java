@@ -14,6 +14,18 @@ import com.example.demo.dao.EmpDao;
 import com.example.demo.dao.EmpDaoImpl;
 import com.example.demo.model.Emp;
 
+
+/*
+ * 
+ * Proect 오른쪽 클릭 > Build Path > Add Libraries > jUnit 추가 (legacy project로 생성 시 최초 한 번만)
+ * 
+ * jUnit 테스트 코드 클래스 생성하려면
+ *  패키지 마우스 오른쪽 클릭 > New > jUnit Test Case 선택 >
+ *  > Name : EmpDaoImpleTest , class under test : com.example.demo.dao.EmpDao 입력 후 next >
+ *  > EmpDao 모두 선택 > finish
+ */
+
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {
   "file:src/main/webapp/WEB-INF/spring/root-context.xml"})
