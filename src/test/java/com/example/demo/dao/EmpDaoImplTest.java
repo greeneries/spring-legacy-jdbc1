@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.dao;
 
 import static org.junit.Assert.*;
 
@@ -17,7 +17,7 @@ import com.example.demo.model.Emp;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {
   "file:src/main/webapp/WEB-INF/spring/root-context.xml"})
-public class EmpTest {
+public class EmpDaoImplTest {
 
 	@Autowired
 	private EmpDao dao;

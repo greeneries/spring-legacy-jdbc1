@@ -10,3 +10,6 @@ properties > Java Build Path > Libraries에서 Java 1.6을 1.8로 변경해준다.
               - remove Library > add Library에서 JRE System Library에서 1.8로 변경해준다.
 properties > Java Complier에서 JDK Compliance 버전을 1.8로 변경해준다. 
 properties > Project Facets에서 Java는 1.8로 변경, Dynamic Web Module은 3.1로 변경
+
+
+
