@@ -34,13 +34,13 @@ public class EmpDaoImplTest {
 	@Autowired
 	private EmpDao dao;
 	
-	@Test
+	//@Test
 	public void testDi() {
 		System.out.println(dao);
 		System.out.println(((EmpDaoImpl)dao).jdbcTemplate);
 	}
 
-	@Test
+	//@Test
 	public void testInsert() {
 		Emp emp = new Emp();
 		emp.setEmpno(3201);
@@ -52,17 +52,17 @@ public class EmpDaoImplTest {
 		System.out.println("affected = " + affected);
 	}
 
-	@Test
+	//@Test
 	public void testUpdate() {
 		fail("Not yet implemented");
 	}
 
-	@Test
+	//@Test
 	public void testDelete() {
 		fail("Not yet implemented");
 	}
 
-	@Test
+	//@Test
 	public void testFindAll() {
 		List<Emp> emps = dao.findAll();
 		System.out.println(emps.size());
@@ -70,6 +70,15 @@ public class EmpDaoImplTest {
 		for (Emp emp : emps) {
 			System.out.println(emp);
 		}
+	}
+	
+	@Test
+	public void testCount() {
+		int count = dao.count();
+		System.out.println("count = " + count);
+		
+		// 단정메소드: 테스트 목적의 명확성, 테스트 자동화 및 코드의 가독성 향상을 위해서 사용한다.
+		assertEquals(count, dao.findAll().size());
 	}
 
 }

@@ -40,7 +40,7 @@ public class EmpDaoImpl implements EmpDao {
 //	메소드마다 반복적으로 사용되는 부분을 밖으로 빼내는 방법을 고려해 보자.
 	@Override
 	public int insert(Emp emp) {
-		String sql = "insert into EMP9(empno, ename, job, sal) values(?, ?, ?, ?)";
+		String sql = "insert into emp(empno, ename, job, sal) values(?, ?, ?, ?)";
 		int affected = jdbcTemplate.update(sql, 
 				emp.getEmpno(), emp.getEname(), emp.getJob(), emp.getSal());
 		
@@ -49,32 +49,32 @@ public class EmpDaoImpl implements EmpDao {
 
 	@Override
 	public int update(Emp emp) {
-		String sql = "update EMP9 set ename=?, job=?, sal=? where empno=?";
+		String sql = "update emp set ename=?, job=?, sal=? where empno=?";
 		return jdbcTemplate.update(sql, 
 				emp.getEname(), emp.getJob(), emp.getSal(), emp.getEmpno());
 	}
 
 	@Override
 	public int delete(int empno) {
-		String sql = "delete EMP9 where empno=?";
+		String sql = "delete emp where empno=?";
 		return jdbcTemplate.update(sql, empno);
 	}
 
 	@Override
 	public List<Emp> findAll() {
-		String sql = "select empno, ename, job, sal from EMP9 order by empno asc";
+		String sql = "select empno, ename, job, sal from emp order by empno asc";
 		return jdbcTemplate.query(sql, rowMapper);
 	}
 
 	@Override
 	public int count() {
-		String sql = "select count(*) from EMP9";
+		String sql = "select count(*) from emp";
 		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
 
 	@Override
 	public Emp findOne(int empno) {
-		String sql = "select empno, ename, job, sal from EMP9 where empno=?";
+		String sql = "select empno, ename, job, sal from emp where empno=?";
 		return jdbcTemplate.queryForObject(sql, rowMapper, empno);
 	}
 

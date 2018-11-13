@@ -16,7 +16,7 @@ public class EmpController {
 	@Autowired
 	private EmpDao empDao;
 
-//	http://localhost:8080/demo/emps
+//	http://localhost:8080/transaction/emps
 	@RequestMapping(value="/emps", method=RequestMethod.GET)
 	public String getAll(Model model) {
 		// DAO에게 데이터를 구해달라고 요청한다.
